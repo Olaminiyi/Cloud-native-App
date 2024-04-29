@@ -20,3 +20,17 @@ venv will create a virtual Python installation in the .venv folder.
             which python
 
 While the virtual environment is active, the above command will output a filepath that includes the .venv directory, by ending with the following:
+
+
+- installing dependencies
+
+![alt text](images/1.1.png)
+![alt text](images/1.2.png)
+
+- run application with python3
+            python3 app.py
+
+- App Running on http://127.0.0.1:5000
+
+![alt text](images/1.3.png)
+![alt text](images/1.4.png)
