@@ -1,4 +1,14 @@
 # Cloud-native-App
+- You will need to have the following tools for this project
+      - An IDE prefarably Visual Studio Code (VSCode)
+      - python3
+      - pip3
+      - An Iam role with a programmatic access configured on the system (i.e using aws configure)
+      - eksctl: for creating kubernetes cluster
+      - kubeclt: for intereacting with cluster from our IDE
+      - Docker desktop app
+      - install other dependencies in the requirement.txt with: pip3 install requirement.txt
+
 
 ### we need to create a new virtual environment using phyton 3 because my current macos environment is been managed by homebrew
 
