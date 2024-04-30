@@ -34,3 +34,26 @@ While the virtual environment is active, the above command will output a filepat
 
 ![alt text](images/1.3.png)
 ![alt text](images/1.4.png)
+
+
+To create  ECR resource on the AWS console with python, we need to  install or update the AWS SDK for Python.
+
+The SDK is composed of two key Python packages: Botocore (the library providing the low-level functionality shared between the Python SDK and the AWS CLI) and Boto3 (the package implementing the Python SDK itself).
+
+- install the latest Boto3 release via pip:
+            pip install boto3
+
+
+- create ecr.py for ecr configurtion file
+
+                import boto3
+
+                ecr_client = boto3.client('ecr')
+
+                repository_name = "my_monitoring_app_image"
+                response = ecr_client.create_repository(repositoryName=repository_name)
+
+                repository_uri = response['repository'] ['repositoryUri']
+                print(repository_uri)
+
+- run it with python3 ecr.py
