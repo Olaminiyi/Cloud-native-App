@@ -57,3 +57,38 @@ The SDK is composed of two key Python packages: Botocore (the library providing 
                 print(repository_uri)
 
 - run it with python3 ecr.py
+
+
+- checked the console if the resource was created successfully
+
+- push the image by clicking on "view push push command in ecr repo", push the image with the following commands 
+
+                aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 992382761454.dkr.ecr.us-east-1.amazonaws.com
+
+                docker build -t my_monitoring_app_image .
+
+                docker tag my_monitoring_app_image:latest 992382761454.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
+
+                docker push 992382761454.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
+
+
+### we need to create kubenetes cluster on AWS for our application
+- installing kubernetes with pip
+
+- we use eksctl to create the resource
+
+      $ eksctl create cluster \
+      --name cloud-Native-App \
+      --region us-east-1 \
+      --nodegroup-name worker \
+      --node-type t2.micro \
+      --nodes 3      
+
+
+
+- run the eks.py script to create service and deployment
+
+- Expose port 5000 in the security group of the cluster
+
+
+            kubectl port-forward svc/my-flask-service  5000:5000
